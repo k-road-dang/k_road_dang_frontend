@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["es2017", "es2021"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "experimentalDecorators": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@component/*": ["app/component/*"],
+      "@type/*": ["app/type/*"],
+      "@util/*": ["app/util/*"],
+      "@navigation/*": ["app/navigation/*"],
+      "@hooks/*": ["app/hooks/*"],
+      "@screen/*": ["app/screen/*"],
+      "@enum/*": ["app/enum/*"],
+      "@store/*": ["app/store/*"],
+      "@asyncStorage/*": ["app/asyncStorage/*"],
+      "@assets/*": ["assets/*"],
+      "@images/*": ["assets/images/*"],
+      "@fonts/*": ["assets/fonts/*"],
+      "@styles/*": ["styles/*"],
+      "@translations/*": ["translations/*"],
+      "@api/*": ["api/*"]
+    }
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}

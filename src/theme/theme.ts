@@ -1,13 +1,5 @@
-import { fonts, fontSizes } from "./fonts";
-
-const colors = {
-  black: "rgb(61, 61, 61)",
-  hint: "#b2b3b9",
-  disabled: "#8c8d96",
-  red: "#f26462",
-  blue: "#6b64ff",
-  green: "#30d53c",
-};
+import { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, text } from "@theme/fonts";
+import { colors } from "@theme/colors";
 
 const space = {
   space: [
@@ -47,8 +39,50 @@ const space = {
   ],
 };
 
-const theme = { colors, fonts, fontSizes, space };
+const sizes = {};
+
+const borders = {
+  default: `1px solid ${colors["line-gray"]}`,
+  box: ` 1px solid ${colors["box-gray"]}`,
+};
+
+const borderWidths = {};
+const borderStyles = {};
+
+const radii = {
+  default: 4,
+};
+
+const shadows = {
+  card: "0px 1px 3px 0px #0000000a",
+  inputButton: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
+  box: "0px 1px 3px 0px rgba(0, 0, 0, 0.04)",
+  circle: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
+};
+
+const zIndices = {};
+const transitions = {};
+
+const theme = {
+  space,
+  fontSizes,
+  colors,
+  fonts,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  sizes,
+  borders,
+  borderWidths,
+  borderStyles,
+  radii,
+  shadows,
+  zIndices,
+  transitions,
+  text,
+};
 
 export default theme;
 
 // https://system-ui.com/theme/
+// https://styled-system.com/getting-started

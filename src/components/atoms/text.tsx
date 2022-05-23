@@ -4,18 +4,44 @@ import styled from "styled-components/native";
 import { variant } from "styled-system";
 
 export type TextProps = {
-  size?: "big" | "small";
+  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "s1" | "s2";
   appearance?: "default" | "hint" | "disabled" | "alternative" | "red" | "green";
 };
 
 export const size = variant({
-  prop: "size",
+  prop: "type",
   variants: {
-    big: {
+    h1: {
       fontSize: "h1",
+      fontWeight: "black",
     },
-    small: {
+    h2: {
+      fontSize: "h2",
+      fontWeight: "medium",
+    },
+    h3: {
+      fontSize: "h3",
+      fontWeight: "medium",
+    },
+    h4: {
       fontSize: "h4",
+      fontWeight: "medium",
+    },
+    h5: {
+      fontSize: "h5",
+      fontWeight: "regular",
+    },
+    h6: {
+      fontSize: "h6",
+      fontWeight: "medium",
+    },
+    s1: {
+      fontSize: "s1",
+      fontWeight: "regular",
+    },
+    s2: {
+      fontSize: "s2",
+      fontWeight: "regular",
     },
   },
 });
@@ -23,23 +49,20 @@ export const size = variant({
 export const appearance = variant({
   prop: "appearance",
   variants: {
-    default: {
+    orange: {
+      color: "main-orange",
+    },
+    yellow: {
+      color: "main-yellow",
+    },
+    gray: {
+      color: "font-gray",
+    },
+    example: {
+      color: "font-example",
+    },
+    black: {
       color: "black",
-    },
-    hint: {
-      color: "hint",
-    },
-    disabled: {
-      color: "disabled",
-    },
-    red: {
-      color: "red",
-    },
-    blue: {
-      color: "blue",
-    },
-    green: {
-      color: "green",
     },
   },
 });

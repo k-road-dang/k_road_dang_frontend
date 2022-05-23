@@ -2,14 +2,14 @@ import React from "react";
 import { View } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
 import { Text } from "@components/atoms/text";
-import { ThemeProvider } from "./src/providers";
+import { ThemeProvider } from "@providers";
 
 const App = () => {
   return (
     <ThemeProvider>
       <Header />
       <View>
-        <Text size="big" appearance="hint">
+        <Text type="h1" appearance="orange">
           히히dddddd
         </Text>
       </View>

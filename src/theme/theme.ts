@@ -1,7 +1,15 @@
-import { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, text } from "@theme/fonts";
-import { colors } from "@theme/colors";
+export const palette = {
+  "main-orange": "#F36D36",
+  "main-yellow": "#FFC946",
+  "font-gray": "#999999",
+  "font-example": "#B3B3B3",
+  "line-gray": "#E6E6E6",
+  "button-inactive": "#F0F0F0",
+  "box-gray": "#F5F5F5",
+  "main-black": "#000000",
+};
 
-const space = {
+const theme = {
   space: [
     0, // 0
     8, // 1
@@ -37,49 +45,63 @@ const space = {
     248, // 31
     256, // 32
   ],
-};
-
-const sizes = {};
-
-const borders = {
-  default: `1px solid ${colors["line-gray"]}`,
-  box: ` 1px solid ${colors["box-gray"]}`,
-};
-
-const borderWidths = {};
-const borderStyles = {};
-
-const radii = {
-  default: 4,
-};
-
-const shadows = {
-  card: "0px 1px 3px 0px #0000000a",
-  inputButton: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
-  box: "0px 1px 3px 0px rgba(0, 0, 0, 0.04)",
-  circle: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
-};
-
-const zIndices = {};
-const transitions = {};
-
-const theme = {
-  space,
-  fontSizes,
-  colors,
-  fonts,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-  sizes,
-  borders,
-  borderWidths,
-  borderStyles,
-  radii,
-  shadows,
-  zIndices,
-  transitions,
-  text,
+  colors: {
+    ...palette,
+  },
+  fonts: {
+    headline: "Noto Sans KR, sans-serif",
+    subtitle: "Noto Sans KR, sans-serif",
+    bodytext: "Noto Sans KR, sans-serif",
+    label: "Noto Sans KR, sans-serif",
+  },
+  fontSizes: {
+    h1: "32px",
+    h2: "24px",
+    h3: "18px",
+    h4: "16px",
+    h5: "14px",
+    h6: "13px",
+    s1: "12px",
+    s2: "10px",
+  },
+  fontWeights: {
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+  },
+  lineHeights: {
+    headline: 1.5,
+    subtitle: 1.5,
+    bodytext: 1.5,
+    smalltext: 1.5,
+  },
+  letterSpacings: {
+    headline: "normal",
+    subtitle: "normal",
+    bodytext: "normal",
+    smalltext: "normal",
+  },
+  sizes: {},
+  borders: {
+    default: `1px solid ${palette["line-gray"]}`,
+    box: ` 1px solid ${palette["box-gray"]}`,
+  },
+  borderWidths: {},
+  borderStyles: {},
+  radii: {
+    default: 4,
+  },
+  shadows: {
+    card: "0px 1px 3px 0px #0000000a",
+    inputButton: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
+    box: "0px 1px 3px 0px rgba(0, 0, 0, 0.04)",
+    circle: "0px 1px 2px 0px rgba(0, 0, 0, 0.08)",
+  },
+  zIndices: {},
+  transitions: {},
 };
 
 export default theme;

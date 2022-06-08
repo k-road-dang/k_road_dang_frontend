@@ -1,3 +1,15 @@
+export type paletteType =
+  | "main-orange"
+  | "main-yellow"
+  | "font-gray"
+  | "font-example"
+  | "line-gray"
+  | "button-inactive"
+  | "box-gray"
+  | "main-black";
+
+export type fontSizeType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "s1" | "s2";
+
 export const palette = {
   "main-orange": "#F36D36",
   "main-yellow": "#FFC946",
@@ -9,7 +21,7 @@ export const palette = {
   "main-black": "#000000",
 };
 
-const theme = {
+export const theme = {
   space: [
     0, // 0
     8, // 1
@@ -103,8 +115,6 @@ const theme = {
   zIndices: {},
   transitions: {},
 };
-
-export default theme;
 
 // https://system-ui.com/theme/
 // https://styled-system.com/getting-started

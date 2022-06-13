@@ -1,13 +1,24 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components/native";
-import { variant, position, width, flex, PositionProps, WidthProps, FlexProps } from "styled-system";
+import {
+  variant,
+  position,
+  width,
+  flex,
+  PositionProps,
+  WidthProps,
+  FlexProps,
+  space,
+  SpaceProps,
+} from "styled-system";
 import { TextProps, Text } from "@components/atoms/text";
 import { paletteType, fontSizeType } from "@theme/theme";
 
 export type ButtonColor = "main-orange" | "main-yellow" | "main-black";
 export type ButtonSize = "xl" | "lg" | "md" | "sm" | "xs";
 
-export type StyledButtonProps = PositionProps &
+export type StyledButtonProps = SpaceProps &
+  PositionProps &
   WidthProps &
   FlexProps & {
     color?: ButtonColor;
@@ -69,6 +80,7 @@ const StyledButton = styled.TouchableOpacity(
   size,
   width,
   flex,
+  space,
 );
 
 const ButtonText = (props: TextProps & { fontSize?: fontSizeType } & { fontColor?: paletteType }) => {

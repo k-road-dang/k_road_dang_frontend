@@ -14,18 +14,19 @@ import {
   ColorProps,
 } from "styled-system";
 
-export type TextVariant = "headline" | "subtitle" | "bodyText" | "smallText";
+export type TextAppearance = "headline" | "subtitle" | "bodyText" | "smallText";
 
 export type TextProps = BackgroundColorProps &
   FontSizeProps &
   FontWeightProps &
   SpaceProps &
   ColorProps & {
-    variant?: TextVariant;
+    appearance?: TextAppearance;
     children?: ReactNode;
   };
 
-export const variants = variant({
+const appearance = variant({
+  prop: "appearance",
   variants: {
     headline: {
       fontSize: "h2",
@@ -42,7 +43,7 @@ export const variants = variant({
   },
 });
 
-const StyledText = styled.Text(color, fontSize, fontWeight, space, backgroundColor, variants);
+const StyledText = styled.Text(color, fontSize, fontWeight, space, backgroundColor, appearance);
 
 export const Text: React.FunctionComponent<TextProps> = ({ children, ...rest }) => {
   return <StyledText {...rest}>{children}</StyledText>;

@@ -1,19 +1,21 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components/native";
-import { variant, color, backgroundColor, position, width, flex } from "styled-system";
+import { variant, position, width, flex, PositionProps, WidthProps, FlexProps } from "styled-system";
 import { TextProps, Text } from "@components/atoms/text";
 import { paletteType, fontSizeType } from "@theme/theme";
 
 export type ButtonColor = "main-orange" | "main-yellow" | "main-black";
 export type ButtonSize = "xl" | "lg" | "md" | "sm" | "xs";
 
-export type StyledButtonProps = {
-  bg?: ButtonColor;
-  size?: ButtonSize;
-  fontSize?: fontSizeType;
-  fontColor?: paletteType;
-  children?: ReactNode;
-};
+export type StyledButtonProps = PositionProps &
+  WidthProps &
+  FlexProps & {
+    color?: ButtonColor;
+    size?: ButtonSize;
+    fontSize?: fontSizeType;
+    fontColor?: paletteType;
+    children?: ReactNode;
+  };
 
 export const size = variant({
   prop: "size",
@@ -41,13 +43,27 @@ export const size = variant({
   },
 });
 
+export const color = variant({
+  prop: "color",
+  variants: {
+    "main-orange": {
+      backgroundColor: "main-orange",
+    },
+    "main-yellow": {
+      backgroundColor: "main-orange",
+    },
+    "main-black": {
+      backgroundColor: "main-black",
+    },
+  },
+});
+
 const StyledButton = styled.TouchableOpacity(
   {
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "4px",
   },
-  backgroundColor,
   color,
   position,
   size,
@@ -69,9 +85,13 @@ export const Button: React.FunctionComponent<StyledButtonProps> = ({
 }) => {
   return (
     <StyledButton {...rest}>
-      <ButtonText fontSize={fontSize} fontColor={fontColor}>
-        {children}
-      </ButtonText>
+      {typeof children === "string" ? (
+        <ButtonText fontSize={fontSize} fontColor={fontColor}>
+          {children}
+        </ButtonText>
+      ) : (
+        children
+      )}
     </StyledButton>
   );
 };

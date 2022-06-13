@@ -1,20 +1,21 @@
 import React from "react";
-import { ImageSourcePropType, TouchableOpacity } from "react-native";
+import { ImageSourcePropType } from "react-native";
 import styled from "styled-components/native";
 import { width as styledWidth, height as styledHeight, space, SpaceProps } from "styled-system";
+import { TouchableOpacity } from "@components/atoms";
 
 export type ImageProps = SpaceProps & {
   source: ImageSourcePropType;
   width: number;
   height: number;
-  onClick?: () => void;
+  onPress?: () => void;
 };
 
 const StyledImage = styled.Image(space, styledWidth, styledHeight);
 
-export const Image: React.FunctionComponent<ImageProps> = ({ source, width, height, onClick, ...rest }) => {
+export const Image: React.FunctionComponent<ImageProps> = ({ source, width, height, onPress, ...rest }) => {
   return (
-    <TouchableOpacity onPress={onClick}>
+    <TouchableOpacity onPress={onPress}>
       <StyledImage source={source} width={width} height={height} {...rest} />
     </TouchableOpacity>
   );

@@ -44,7 +44,7 @@ export const TextInput: React.FunctionComponent<TextInputProps> = ({
   onChangeText,
   ...rest
 }) => {
-  const handleImageClick = useCallback(() => {
+  const handleImagePress = useCallback(() => {
     onChangeText?.("");
   }, [onChangeText]);
 
@@ -56,7 +56,7 @@ export const TextInput: React.FunctionComponent<TextInputProps> = ({
           source={{ uri: "https://reactjs.org/logo-og.png" }}
           width={16}
           height={16}
-          onClick={handleImageClick}
+          onPress={handleImagePress}
         />
       ) : null}
     </StyledTextInputView>

@@ -6,7 +6,8 @@ export type paletteType =
   | "line-gray"
   | "button-inactive"
   | "box-gray"
-  | "main-black";
+  | "main-black"
+  | "main-white";
 
 export type fontSizeType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "s1" | "s2";
 
@@ -19,6 +20,7 @@ export const palette = {
   "button-inactive": "#F0F0F0",
   "box-gray": "#F5F5F5",
   "main-black": "#000000",
+  "main-white": "#ffff",
 };
 
 export const theme = {

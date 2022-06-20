@@ -11,11 +11,17 @@ import {
   space,
   SpaceProps,
 } from "styled-system";
-import { TextProps, Text } from "@components/atoms/text";
+import { Text } from "@components/atoms/text";
 import { paletteType, fontSizeType } from "@theme/theme";
 
 export type ButtonColor = "main-orange" | "main-yellow" | "main-black";
 export type ButtonSize = "xl" | "lg" | "md" | "sm" | "xs";
+
+const fontStyleItems: { color: ButtonColor; fontColor: paletteType; fontSize: fontSizeType }[] = [
+  { color: "main-orange", fontColor: "main-white", fontSize: "h5" },
+  { color: "main-yellow", fontColor: "main-black", fontSize: "h5" },
+  { color: "main-black", fontColor: "main-white", fontSize: "h5" },
+];
 
 export type StyledButtonProps = SpaceProps &
   PositionProps &
@@ -28,7 +34,7 @@ export type StyledButtonProps = SpaceProps &
     children?: ReactNode;
   };
 
-export const size = variant({
+const size = variant({
   prop: "size",
   variants: {
     xl: {
@@ -54,14 +60,14 @@ export const size = variant({
   },
 });
 
-export const color = variant({
+const color = variant({
   prop: "color",
   variants: {
     "main-orange": {
       backgroundColor: "main-orange",
     },
     "main-yellow": {
-      backgroundColor: "main-orange",
+      backgroundColor: "main-yellow",
     },
     "main-black": {
       backgroundColor: "main-black",
@@ -71,8 +77,11 @@ export const color = variant({
 
 const StyledButton = styled.TouchableOpacity(
   {
-    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "flex-start",
     borderRadius: "4px",
   },
   color,
@@ -83,24 +92,16 @@ const StyledButton = styled.TouchableOpacity(
   space,
 );
 
-const ButtonText = (props: TextProps & { fontSize?: fontSizeType } & { fontColor?: paletteType }) => {
-  const { fontSize = "h5", fontColor = "main-black" } = props;
+export const Button: React.FunctionComponent<StyledButtonProps> = ({ children, ...rest }) => {
+  const fontColor = fontStyleItems.find((item) => item.color === rest.color)?.fontColor;
+  const fontSize = fontStyleItems.find((item) => item.color === rest.color)?.fontSize;
 
-  return <Text {...props} fontWeight="medium" fontSize={fontSize} color={fontColor} />;
-};
-
-export const Button: React.FunctionComponent<StyledButtonProps> = ({
-  children,
-  fontSize,
-  fontColor,
-  ...rest
-}) => {
   return (
     <StyledButton {...rest}>
       {typeof children === "string" ? (
-        <ButtonText fontSize={fontSize} fontColor={fontColor}>
+        <Text fontWeight="medium" fontSize={fontSize} color={fontColor}>
           {children}
-        </ButtonText>
+        </Text>
       ) : (
         children
       )}

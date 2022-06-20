@@ -14,10 +14,14 @@ import {
   PositionProps,
   BorderProps,
   AlignSelfProps,
+  JustifyItemsProps,
+  JustifyContentProps,
 } from "styled-system";
 import styled from "styled-components/native";
 
 export type ViewProps = SpaceProps &
+  JustifyItemsProps &
+  JustifyContentProps &
   LayoutProps &
   TypographyProps &
   ColorProps &

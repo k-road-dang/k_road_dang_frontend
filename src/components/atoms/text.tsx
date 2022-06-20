@@ -14,7 +14,7 @@ import {
   ColorProps,
 } from "styled-system";
 
-export type TextAppearance = "headline" | "subtitle" | "bodyText" | "smallText";
+export type TextAppearance = "head-line" | "subtitle" | "body-text" | "small-text" | "xsmall-text";
 
 export type TextProps = BackgroundColorProps &
   FontSizeProps &
@@ -28,17 +28,20 @@ export type TextProps = BackgroundColorProps &
 const appearance = variant({
   prop: "appearance",
   variants: {
-    headline: {
+    "head-line": {
       fontSize: "h2",
     },
     subtitle: {
       fontSize: "h3",
     },
-    bodyText: {
+    "body-text": {
       fontSize: "h5",
     },
-    smallText: {
+    "small-text": {
       fontSize: "s2",
+    },
+    "xsmall-text": {
+      fontSize: "s1",
     },
   },
 });

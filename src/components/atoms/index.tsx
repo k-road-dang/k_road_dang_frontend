@@ -1,4 +1,5 @@
 export * from "./button";
+export * from "./chip";
 export * from "./image";
 export * from "./text-area";
 export * from "./text-input";

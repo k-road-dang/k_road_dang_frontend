@@ -4,21 +4,21 @@ import { space, SpaceProps } from "styled-system";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { palette, paletteType } from "@theme/theme";
 
-export type CheckBoxColor = "circle" | "square";
-
-export type CheckBoxProps = SpaceProps & {
-  size?: number;
-  shape: CheckBoxColor;
-  color: paletteType;
-  isChecked: boolean;
-  setIsChecked: Dispatch<SetStateAction<boolean>>;
-};
+export type CheckBoxShape = "circle" | "square";
 
 const colorItems: { color: paletteType; borderColor: paletteType }[] = [
   { color: "main-orange", borderColor: "line-gray" },
   { color: "main-yellow", borderColor: "line-gray" },
   { color: "main-black", borderColor: "line-gray" },
 ];
+
+export type CheckBoxProps = SpaceProps & {
+  size?: number;
+  shape: CheckBoxShape;
+  color: paletteType;
+  isChecked: boolean;
+  setIsChecked: Dispatch<SetStateAction<boolean>>;
+};
 
 const StyledCheckBox = styled(BouncyCheckbox)(space);
 

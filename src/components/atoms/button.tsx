@@ -14,13 +14,13 @@ import {
 import { Text } from "@components/atoms/text";
 import { paletteType, fontSizeType } from "@theme/theme";
 
-export type ButtonColor = "main-orange" | "main-yellow" | "main-black";
+export type ButtonColor = "orange" | "yellow" | "black";
 export type ButtonSize = "xl" | "lg" | "md" | "sm" | "xs";
 
 const fontStyleItems: { color: ButtonColor; fontColor: paletteType; fontSize: fontSizeType }[] = [
-  { color: "main-orange", fontColor: "main-white", fontSize: "h5" },
-  { color: "main-yellow", fontColor: "main-black", fontSize: "h5" },
-  { color: "main-black", fontColor: "main-white", fontSize: "h5" },
+  { color: "orange", fontColor: "main-white", fontSize: "h5" },
+  { color: "yellow", fontColor: "main-black", fontSize: "h5" },
+  { color: "black", fontColor: "main-white", fontSize: "h5" },
 ];
 
 export type StyledButtonProps = SpaceProps &
@@ -63,13 +63,13 @@ const size = variant({
 const color = variant({
   prop: "color",
   variants: {
-    "main-orange": {
+    orange: {
       backgroundColor: "main-orange",
     },
-    "main-yellow": {
+    yellow: {
       backgroundColor: "main-yellow",
     },
-    "main-black": {
+    black: {
       backgroundColor: "main-black",
     },
   },

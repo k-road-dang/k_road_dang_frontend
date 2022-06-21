@@ -77,6 +77,7 @@ export const theme = {
     h6: "13px",
     s1: "12px",
     s2: "10px",
+    s3: "9px",
   },
   fontWeights: {
     thin: 100,

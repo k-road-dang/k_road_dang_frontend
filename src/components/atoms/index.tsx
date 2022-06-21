@@ -3,6 +3,7 @@ export * from "./check-box";
 export * from "./chip";
 export * from "./chip";
 export * from "./image";
+export * from "./label";
 export * from "./text-area";
 export * from "./text-input";
 export * from "./text";

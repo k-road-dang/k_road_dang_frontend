@@ -57,7 +57,7 @@ const StyledLabel = styled.View(
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "flex-start",
-    borderRadius: "2px",
+    borderRadius: 2,
   },
   space,
   height,

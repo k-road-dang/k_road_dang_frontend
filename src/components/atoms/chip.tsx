@@ -64,7 +64,7 @@ const StyledChip = styled.TouchableOpacity(
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "flex-start",
-    borderRadius: "20px",
+    borderRadius: 20,
   },
   space,
   height,

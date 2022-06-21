@@ -82,7 +82,7 @@ const StyledButton = styled.TouchableOpacity(
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "flex-start",
-    borderRadius: "4px",
+    borderRadius: 4,
   },
   color,
   position,

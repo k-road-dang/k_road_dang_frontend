@@ -8,7 +8,7 @@ export type AvatarProps = SpaceProps & {
   size: number;
 };
 
-const StyledAvatar = styled.Image({ borderRadius: "50px" }, space, styledWidth, styledHeight);
+const StyledAvatar = styled.Image({ borderRadius: 50 }, space, styledWidth, styledHeight);
 
 export const Avatar: React.FunctionComponent<AvatarProps> = ({ source, size, ...rest }) => {
   return <StyledAvatar source={source} width={size} height={size} {...rest} />;

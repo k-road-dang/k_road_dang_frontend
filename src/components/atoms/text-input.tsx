@@ -26,7 +26,7 @@ const appearance = variant({
       fontSize: "h5",
       py: "9px",
       px: "10px",
-      borderRadius: "4px",
+      borderRadius: 4,
     },
   },
 });
@@ -51,6 +51,7 @@ export const TextInput: React.FunctionComponent<TextInputProps> = ({
   return (
     <StyledTextInputView {...rest}>
       <StyledTextInput value={value} placeholder={placeholder} onChangeText={onChangeText} />
+      {/* FIXME: change icon */}
       {value ? (
         <Image
           source={{ uri: "https://reactjs.org/logo-og.png" }}

@@ -1,74 +1,53 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components/native";
+import {
+  variant,
+  backgroundColor,
+  fontSize,
+  fontWeight,
+  space,
+  color,
+  BackgroundColorProps,
+  FontSizeProps,
+  FontWeightProps,
+  SpaceProps,
+  ColorProps,
+} from "styled-system";
 
-import { variant } from "styled-system";
+export type TextAppearance = "head-line" | "subtitle" | "body-text" | "small-text" | "xsmall-text";
 
-export type TextProps = {
-  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "s1" | "s2";
-  appearance?: "default" | "hint" | "disabled" | "alternative" | "red" | "green";
-};
+export type TextProps = BackgroundColorProps &
+  FontSizeProps &
+  FontWeightProps &
+  SpaceProps &
+  ColorProps & {
+    appearance?: TextAppearance;
+    children?: ReactNode;
+  };
 
-export const size = variant({
-  prop: "type",
-  variants: {
-    h1: {
-      fontSize: "h1",
-      fontWeight: "black",
-    },
-    h2: {
-      fontSize: "h2",
-      fontWeight: "medium",
-    },
-    h3: {
-      fontSize: "h3",
-      fontWeight: "medium",
-    },
-    h4: {
-      fontSize: "h4",
-      fontWeight: "medium",
-    },
-    h5: {
-      fontSize: "h5",
-      fontWeight: "regular",
-    },
-    h6: {
-      fontSize: "h6",
-      fontWeight: "medium",
-    },
-    s1: {
-      fontSize: "s1",
-      fontWeight: "regular",
-    },
-    s2: {
-      fontSize: "s2",
-      fontWeight: "regular",
-    },
-  },
-});
-
-export const appearance = variant({
+const appearance = variant({
   prop: "appearance",
   variants: {
-    orange: {
-      color: "main-orange",
+    "head-line": {
+      fontSize: "h2",
     },
-    yellow: {
-      color: "main-yellow",
+    subtitle: {
+      fontSize: "h3",
     },
-    gray: {
-      color: "font-gray",
+    "body-text": {
+      fontSize: "h5",
     },
-    example: {
-      color: "font-example",
+    "small-text": {
+      fontSize: "s2",
     },
-    black: {
-      color: "black",
+    "xsmall-text": {
+      fontSize: "s1",
     },
   },
 });
 
-const StyledText = styled.Text<TextProps>(size, appearance);
+const StyledText = styled.Text(color, fontSize, fontWeight, space, backgroundColor, appearance);
 
-export const Text: React.FunctionComponent<TextProps> = (props) => {
-  return <StyledText {...props} />;
+export const Text: React.FunctionComponent<TextProps> = ({ children, ...rest }) => {
+  return <StyledText {...rest}>{children}</StyledText>;
 };

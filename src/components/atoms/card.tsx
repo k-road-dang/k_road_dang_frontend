@@ -22,6 +22,6 @@ const StyledCard = styled.View(
   space,
 );
 
-export const Card: React.FunctionComponent<CardProps> = ({ children, ...rest }) => {
+export const Card: React.FC<CardProps> = ({ children, ...rest }) => {
   return <StyledCard {...rest}>{children}</StyledCard>;
 };

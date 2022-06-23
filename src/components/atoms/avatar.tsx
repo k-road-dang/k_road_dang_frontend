@@ -10,6 +10,6 @@ export type AvatarProps = SpaceProps & {
 
 const StyledAvatar = styled.Image({ borderRadius: 50 }, space, styledWidth, styledHeight);
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({ source, size, ...rest }) => {
+export const Avatar: React.FC<AvatarProps> = ({ source, size, ...rest }) => {
   return <StyledAvatar source={source} width={size} height={size} {...rest} />;
 };

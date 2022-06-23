@@ -32,6 +32,7 @@ export type StyledButtonProps = SpaceProps &
     fontSize?: fontSizeType;
     fontColor?: paletteType;
     children?: ReactNode;
+    onPress?: () => void;
   };
 
 const size = variant({
@@ -92,12 +93,12 @@ const StyledButton = styled.TouchableOpacity(
   space,
 );
 
-export const Button: React.FunctionComponent<StyledButtonProps> = ({ children, ...rest }) => {
+export const Button: React.FC<StyledButtonProps> = ({ children, onPress, ...rest }) => {
   const fontColor = fontStyleItems.find((item) => item.color === rest.color)?.fontColor;
   const fontSize = fontStyleItems.find((item) => item.color === rest.color)?.fontSize;
 
   return (
-    <StyledButton {...rest}>
+    <StyledButton onPress={onPress} {...rest}>
       {typeof children === "string" ? (
         <Text fontWeight="medium" fontSize={fontSize} color={fontColor}>
           {children}

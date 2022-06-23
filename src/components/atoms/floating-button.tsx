@@ -22,7 +22,7 @@ const StyledFloatingButton = styled.TouchableOpacity(
   space,
 );
 
-export const FloatingButton: React.FunctionComponent<FloatingButtonProps> = ({ ...rest }) => {
+export const FloatingButton: React.FC<FloatingButtonProps> = ({ ...rest }) => {
   return (
     <StyledFloatingButton {...rest}>
       {/* FIXME: change source (plus icon) */}

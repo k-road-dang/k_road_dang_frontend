@@ -48,6 +48,6 @@ const appearance = variant({
 
 const StyledText = styled.Text(color, fontSize, fontWeight, space, backgroundColor, appearance);
 
-export const Text: React.FunctionComponent<TextProps> = ({ children, ...rest }) => {
+export const Text: React.FC<TextProps> = ({ children, ...rest }) => {
   return <StyledText {...rest}>{children}</StyledText>;
 };

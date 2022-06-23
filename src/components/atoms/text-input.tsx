@@ -38,12 +38,7 @@ const StyledTextInputView = styled.View(space, appearance, {
   justifyContent: "space-between",
 });
 
-export const TextInput: React.FunctionComponent<TextInputProps> = ({
-  value,
-  placeholder,
-  onChangeText,
-  ...rest
-}) => {
+export const TextInput: React.FC<TextInputProps> = ({ value, placeholder, onChangeText, ...rest }) => {
   const handleImagePress = useCallback(() => {
     onChangeText?.("");
   }, [onChangeText]);

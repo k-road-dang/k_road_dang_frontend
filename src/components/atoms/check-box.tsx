@@ -22,7 +22,7 @@ export type CheckBoxProps = SpaceProps & {
 
 const StyledCheckBox = styled(BouncyCheckbox)(space);
 
-export const CheckBox: React.FunctionComponent<CheckBoxProps> = ({
+export const CheckBox: React.FC<CheckBoxProps> = ({
   size = 25,
   shape,
   color,

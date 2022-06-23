@@ -16,6 +16,10 @@ import {
   AlignSelfProps,
   JustifyItemsProps,
   JustifyContentProps,
+  AlignItemsProps,
+  alignItems,
+  FlexProps,
+  flex,
 } from "styled-system";
 import styled from "styled-components/native";
 
@@ -27,12 +31,24 @@ export type ViewProps = SpaceProps &
   ColorProps &
   PositionProps &
   BorderProps &
-  AlignSelfProps & {
+  AlignSelfProps &
+  AlignItemsProps &
+  FlexProps & {
     children?: ReactNode;
   };
 
-const StyledView = styled.View(space, layout, typography, color, position, border, alignSelf);
+const StyledView = styled.View(
+  space,
+  layout,
+  typography,
+  color,
+  position,
+  border,
+  alignSelf,
+  alignItems,
+  flex,
+);
 
-export const View: React.FunctionComponent<ViewProps> = ({ children, ...rest }) => {
+export const View: React.FC<ViewProps> = ({ children, ...rest }) => {
   return <StyledView {...rest}>{children}</StyledView>;
 };

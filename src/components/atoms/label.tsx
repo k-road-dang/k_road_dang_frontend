@@ -66,7 +66,7 @@ const StyledLabel = styled.View(
   appearance,
 );
 
-export const Label: React.FunctionComponent<LabelProps> = ({ children, ...rest }) => {
+export const Label: React.FC<LabelProps> = ({ children, ...rest }) => {
   const fontColor = fontStyleItems.find((item) => item.appearance === rest.appearance)?.fontColor;
 
   return (

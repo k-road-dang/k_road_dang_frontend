@@ -38,11 +38,7 @@ const StyledTouchableOpacity = styled.TouchableOpacity(
   alignSelf,
 );
 
-export const TouchableOpacity: React.FunctionComponent<TouchableOpacityProps> = ({
-  children,
-  onPress,
-  ...rest
-}) => {
+export const TouchableOpacity: React.FC<TouchableOpacityProps> = ({ children, onPress, ...rest }) => {
   return (
     <StyledTouchableOpacity onPress={onPress} {...rest}>
       {children}

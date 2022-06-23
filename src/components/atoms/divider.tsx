@@ -26,6 +26,6 @@ const StyledDivider = styled.View(
   color,
 );
 
-export const Divider: React.FunctionComponent<DividerProps> = ({ ...rest }) => {
+export const Divider: React.FC<DividerProps> = ({ ...rest }) => {
   return <StyledDivider {...rest} />;
 };

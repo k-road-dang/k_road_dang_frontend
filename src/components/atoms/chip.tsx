@@ -73,13 +73,7 @@ const StyledChip = styled.TouchableOpacity(
   appearance,
 );
 
-export const Chip: React.FunctionComponent<ChipProps> = ({
-  children,
-  onPress,
-  leftChild,
-  rightChild,
-  ...rest
-}) => {
+export const Chip: React.FC<ChipProps> = ({ children, onPress, leftChild, rightChild, ...rest }) => {
   const fontColor = fontStyleItems.find((item) => item.appearance === rest.appearance)?.fontColor;
 
   return (

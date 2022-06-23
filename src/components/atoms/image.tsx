@@ -13,7 +13,7 @@ export type ImageProps = SpaceProps & {
 
 const StyledImage = styled.Image(space, styledWidth, styledHeight);
 
-export const Image: React.FunctionComponent<ImageProps> = ({ source, width, height, onPress, ...rest }) => {
+export const Image: React.FC<ImageProps> = ({ source, width, height, onPress, ...rest }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <StyledImage source={source} width={width} height={height} {...rest} />

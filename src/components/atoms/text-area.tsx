@@ -11,12 +11,7 @@ export type TextAreaProps = SpaceProps &
 
 const StyledTextInput = styled.TextInput(space, backgroundColor);
 
-export const TextArea: React.FunctionComponent<TextAreaProps> = ({
-  value,
-  placeholder,
-  onChangeText,
-  ...rest
-}) => {
+export const TextArea: React.FC<TextAreaProps> = ({ value, placeholder, onChangeText, ...rest }) => {
   return (
     <StyledTextInput
       value={value}

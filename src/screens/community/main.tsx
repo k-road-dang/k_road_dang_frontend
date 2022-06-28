@@ -1,13 +1,6 @@
 import { Text, View } from "@components/atoms";
 import React from "react";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { CommunityStackParamList } from "@navigation/CommunityNavigator";
-
-type CommunityScreenNavigationProp = StackNavigationProp<CommunityStackParamList, "Community">;
-
-interface CommunityScreenProps {
-  navigation: CommunityScreenNavigationProp;
-}
+import { CommunityScreenProps } from "@navigation/types";
 
 export const CommunityScreen: React.FC<CommunityScreenProps> = () => {
   return (

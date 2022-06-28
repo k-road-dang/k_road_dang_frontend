@@ -3,12 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeNavigator } from "@navigation/HomeNavigator";
 import { CommunityNavigator } from "@navigation/CommunityNavigator";
 import { ProfileNavigator } from "@navigation/ProfileNavigator";
-
-export type TabStackParamList = {
-  Home: undefined;
-  Community: undefined;
-  Profile: undefined;
-};
+import { TabStackParamList } from "@navigation/types";
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 

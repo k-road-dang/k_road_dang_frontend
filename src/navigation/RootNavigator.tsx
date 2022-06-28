@@ -2,11 +2,7 @@ import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TabNavigator } from "@navigation/TabNavigator";
 import { RegisterNavigator } from "@navigation/RegisterNavigator";
-
-export type RootStackParamList = {
-  Tab: undefined;
-  Register: undefined;
-};
+import { RootStackParamList } from "@navigation/types";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 

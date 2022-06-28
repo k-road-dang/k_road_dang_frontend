@@ -1,13 +1,6 @@
 import { Text, View, Button } from "@components/atoms";
 import React from "react";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RegisterStackParamList } from "@navigation/RegisterNavigator";
-
-type BirthNavigationProps = StackNavigationProp<RegisterStackParamList, "Birth">;
-
-interface BirthScreenProps {
-  navigation: BirthNavigationProps;
-}
+import { BirthScreenProps } from "@navigation/types";
 
 export const BirthScreen: React.FC<BirthScreenProps> = ({ navigation }) => {
   return (

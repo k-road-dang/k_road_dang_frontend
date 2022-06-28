@@ -1,17 +1,14 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "@screens/home/main";
-
-export type HomeStackParamList = {
-  Home: undefined;
-};
+import { HomeScreens, HomeStackParamList } from "@navigation/types";
 
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 
 export const HomeNavigator: React.FC = () => {
   return (
-    <HomeStack.Navigator initialRouteName="Home">
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+    <HomeStack.Navigator initialRouteName={HomeScreens.Home}>
+      <HomeStack.Screen name={HomeScreens.Home} component={HomeScreen} />
     </HomeStack.Navigator>
   );
 };

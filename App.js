@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider, NavigationProvider } from "@providers";
-import { RootNavigator } from "./src/navigation/RootNavigator";
+import { RootNavigator } from "@navigation/RootNavigator";
 
 const App = () => {
   return (

@@ -1,13 +1,6 @@
 import { Text, View } from "@components/atoms";
 import React from "react";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { ProfileStackParamList } from "@navigation/ProfileNavigator";
-
-type ProfileScreenNavigationProp = StackNavigationProp<ProfileStackParamList, "Profile">;
-
-interface ProfileScreenProps {
-  navigation: ProfileScreenNavigationProp;
-}
+import { ProfileScreenProps } from "@navigation/types";
 
 export const ProfileScreen: React.FC<ProfileScreenProps> = () => {
   return (

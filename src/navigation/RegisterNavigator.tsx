@@ -4,23 +4,17 @@ import { NicknameScreen } from "@screens/register/nickname";
 import { CategoryScreen } from "@screens/register/category";
 import { RegisterScreen } from "@screens/register/main";
 import { BirthScreen } from "@screens/register/birth";
-
-export type RegisterStackParamList = {
-  Register: undefined;
-  Nickname: undefined;
-  Category: undefined;
-  Birth: undefined;
-};
+import { RegisterScreens, RegisterStackParamList } from "@navigation/types";
 
 const RegisterStack = createNativeStackNavigator<RegisterStackParamList>();
 
 export const RegisterNavigator: React.FC = () => {
   return (
-    <RegisterStack.Navigator initialRouteName="Register">
-      <RegisterStack.Screen name="Register" component={RegisterScreen} />
-      <RegisterStack.Screen name="Nickname" component={NicknameScreen} />
-      <RegisterStack.Screen name="Category" component={CategoryScreen} />
-      <RegisterStack.Screen name="Birth" component={BirthScreen} />
+    <RegisterStack.Navigator initialRouteName={RegisterScreens.Register}>
+      <RegisterStack.Screen name={RegisterScreens.Register} component={RegisterScreen} />
+      <RegisterStack.Screen name={RegisterScreens.Nickname} component={NicknameScreen} />
+      <RegisterStack.Screen name={RegisterScreens.Category} component={CategoryScreen} />
+      <RegisterStack.Screen name={RegisterScreens.Birth} component={BirthScreen} />
     </RegisterStack.Navigator>
   );
 };

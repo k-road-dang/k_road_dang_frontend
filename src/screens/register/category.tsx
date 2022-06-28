@@ -1,13 +1,6 @@
 import { Text, View, Button } from "@components/atoms";
 import React from "react";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RegisterStackParamList } from "@navigation/RegisterNavigator";
-
-type CategoryNavigationProps = StackNavigationProp<RegisterStackParamList, "Category">;
-
-interface CategoryScreenProps {
-  navigation: CategoryNavigationProps;
-}
+import { CategoryScreenProps } from "@navigation/types";
 
 export const CategoryScreen: React.FC<CategoryScreenProps> = ({ navigation }) => {
   return (

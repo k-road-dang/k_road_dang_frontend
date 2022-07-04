@@ -19,8 +19,8 @@ export type ChipProps = SpaceProps & {
   size: ChipSize;
   appearance: ChipAppearance;
   children: ReactNode;
-  leftChild: ReactNode;
-  rightChild: ReactNode;
+  leftChild?: ReactNode;
+  rightChild?: ReactNode;
   onPress?: () => void;
 };
 

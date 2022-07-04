@@ -1,11 +1,13 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components/native";
-import { space, SpaceProps } from "styled-system";
+import { HeightProps, space, SpaceProps, WidthProps } from "styled-system";
 import { palette } from "@theme/theme";
 
-export type CardProps = SpaceProps & {
-  children: ReactNode;
-};
+export type CardProps = SpaceProps &
+  WidthProps &
+  HeightProps & {
+    children: ReactNode;
+  };
 
 const StyledCard = styled.View(
   {

@@ -1,7 +1,8 @@
 import React, { ReactNode, useCallback } from "react";
 import styled from "styled-components/native";
-import { backgroundColor, space, SpaceProps, variant } from "styled-system";
+import { background, backgroundColor, color, space, SpaceProps, variant } from "styled-system";
 import { Image } from "@components/atoms";
+import closeCircle from "@assets/images/close-circle.png";
 
 export type TextInputVariant = "line" | "box";
 
@@ -9,6 +10,7 @@ export type TextInputProps = SpaceProps & {
   children?: ReactNode;
   value?: string;
   placeholder?: string;
+  appearance: TextInputVariant;
   onChangeText?: ((text: string) => void) | undefined;
 };
 
@@ -31,7 +33,7 @@ const appearance = variant({
   },
 });
 
-const StyledTextInput = styled.TextInput(space, backgroundColor);
+const StyledTextInput = styled.TextInput(space, backgroundColor, color, background);
 const StyledTextInputView = styled.View(space, appearance, {
   width: "100%",
   flexDirection: "row",
@@ -46,15 +48,7 @@ export const TextInput: React.FC<TextInputProps> = ({ value, placeholder, onChan
   return (
     <StyledTextInputView {...rest}>
       <StyledTextInput value={value} placeholder={placeholder} onChangeText={onChangeText} />
-      {/* FIXME: change icon */}
-      {value ? (
-        <Image
-          source={{ uri: "https://reactjs.org/logo-og.png" }}
-          width={16}
-          height={16}
-          onPress={handleImagePress}
-        />
-      ) : null}
+      {value ? <Image source={closeCircle} width={16} height={16} onPress={handleImagePress} /> : null}
     </StyledTextInputView>
   );
 };

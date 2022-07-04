@@ -1,11 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components/native";
 import { space, SpaceProps } from "styled-system";
 import { Image } from "@components/atoms";
+import plus from "@assets/images/plus.png";
 
-export type FloatingButtonProps = SpaceProps & {
-  children: ReactNode;
-};
+export type FloatingButtonProps = SpaceProps;
 
 const StyledFloatingButton = styled.TouchableOpacity(
   {
@@ -25,8 +24,7 @@ const StyledFloatingButton = styled.TouchableOpacity(
 export const FloatingButton: React.FC<FloatingButtonProps> = ({ ...rest }) => {
   return (
     <StyledFloatingButton {...rest}>
-      {/* FIXME: change source (plus icon) */}
-      <Image source={{ uri: "https://reactjs.org/logo-og.png" }} width={15} height={15} />
+      <Image source={plus} width={15} height={15} />
     </StyledFloatingButton>
   );
 };

@@ -6,7 +6,7 @@ export type DividerColor = "gray";
 
 export type DividerProps = SpaceProps & {
   color: DividerColor;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const color = variant({
